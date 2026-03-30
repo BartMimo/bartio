@@ -32,7 +32,7 @@ export default function PortfolioPreview() {
               >
                 <div className={`w-full h-52 bg-gradient-to-br ${item.gradient} flex items-end p-5 relative overflow-hidden`}>
                   {item.image && (
-                    <Image src={item.image} alt={item.title} fill className="object-cover object-top" />
+                    <Image src={item.image} alt={item.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                   )}
                   <span className="absolute top-4 left-4 inline-flex items-center px-2.5 py-1 rounded-full bg-white/80 backdrop-blur-sm text-xs font-semibold text-zinc-700 z-10">
                     {item.category}

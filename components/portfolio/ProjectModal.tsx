@@ -25,7 +25,7 @@ export default function ProjectModal({ item, onClose }: { item: PortfolioItem; o
         >
           <div className={`w-full h-56 bg-gradient-to-br ${item.gradient} relative overflow-hidden rounded-t-3xl`}>
             {item.image && (
-              <Image src={item.image} alt={item.title} fill className="object-cover object-top" />
+              <Image src={item.image} alt={item.title} fill sizes="672px" className="object-cover object-top" />
             )}
             <button
               onClick={onClose}
