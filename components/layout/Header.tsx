@@ -72,8 +72,8 @@ export default function Header() {
             <Image
               src="/logobartio.png"
               alt="Bartio"
-              width={32}
-              height={32}
+              width={48}
+              height={48}
               className="rounded-xl shadow-sm group-hover:shadow-md transition-shadow"
             />
             <span className="font-display font-bold text-zinc-900 text-lg tracking-tight">

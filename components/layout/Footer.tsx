@@ -26,8 +26,8 @@ export default function Footer() {
               <Image
                 src="/logobartio.png"
                 alt="Bartio"
-                width={32}
-                height={32}
+                width={48}
+                height={48}
                 className="rounded-xl"
               />
               <span className="font-display font-bold text-white text-lg tracking-tight">
