@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -68,9 +69,13 @@ export default function Header() {
             onClick={(e) => { e.preventDefault(); handleNavClick("/"); }}
             className="flex items-center gap-2.5 group flex-shrink-0"
           >
-            <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-              <span className="text-white font-bold text-sm font-display">B</span>
-            </div>
+            <Image
+              src="/logobartio.png"
+              alt="Bartio"
+              width={32}
+              height={32}
+              className="rounded-xl shadow-sm group-hover:shadow-md transition-shadow"
+            />
             <span className="font-display font-bold text-zinc-900 text-lg tracking-tight">
               Bartio
             </span>

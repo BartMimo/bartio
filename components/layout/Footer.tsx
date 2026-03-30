@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   diensten: [
@@ -22,9 +23,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
           <div className="sm:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-5 w-fit">
-              <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm font-display">B</span>
-              </div>
+              <Image
+                src="/logobartio.png"
+                alt="Bartio"
+                width={32}
+                height={32}
+                className="rounded-xl"
+              />
               <span className="font-display font-bold text-white text-lg tracking-tight">
                 Bartio
               </span>
