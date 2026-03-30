@@ -115,10 +115,10 @@ export default function ContactPage() {
                     E-mail
                   </p>
                   <a
-                    href="mailto:hallo@bartio.nl"
+                    href="mailto:bart.gemert@gmail.com"
                     className="text-zinc-900 font-medium hover:text-brand-600 transition-colors"
                   >
-                    hallo@bartio.nl
+                    bart.gemert@gmail.com
                   </a>
                   <p className="text-xs text-zinc-400 mt-1">Reactie binnen één werkdag</p>
                 </div>
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   en wat Bartio voor je kan doen.
                 </p>
                 <a
-                  href="mailto:hallo@bartio.nl?subject=Gesprek inplannen"
+                  href="mailto:bart.gemert@gmail.com?subject=Gesprek inplannen"
                   className="group inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors"
                 >
                   Gesprek aanvragen

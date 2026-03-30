@@ -1,6 +1,4 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { PortfolioItem } from "@/data/portfolio";
 
 interface PortfolioCardProps {
@@ -9,10 +7,7 @@ interface PortfolioCardProps {
 
 export default function PortfolioCard({ item }: PortfolioCardProps) {
   return (
-    <Link
-      href={`/portfolio/${item.slug}`}
-      className="group block bg-white rounded-2xl border border-zinc-100 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-    >
+    <div className="group bg-white rounded-2xl border border-zinc-100 shadow-card overflow-hidden">
       {/* Visual */}
       <div
         className={`w-full h-56 bg-gradient-to-br ${item.gradient} relative overflow-hidden flex items-end p-5`}
@@ -63,11 +58,17 @@ export default function PortfolioCard({ item }: PortfolioCardProps) {
           </div>
         )}
 
-        <span className="inline-flex items-center gap-1 mt-5 text-xs font-semibold text-brand-600 group-hover:gap-2 transition-all">
-          Bekijk project
-          <ArrowRight size={12} />
-        </span>
+        {item.externalLink && item.externalLink !== "#" && (
+          <a
+            href={item.externalLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 mt-5 text-xs font-semibold text-brand-600 hover:text-brand-700 transition-colors"
+          >
+            Bezoek website ↗
+          </a>
+        )}
       </div>
-    </Link>
+    </div>
   );
 }

@@ -14,7 +14,7 @@ export default function CTASection({
   title = "Klaar om iets moois te bouwen?",
   description = "Vertel ons over je project. We denken graag mee, ook als het idee nog prille is.",
   primaryLabel = "Project bespreken",
-  primaryHref = "mailto:hallo@bartio.nl",
+  primaryHref = "mailto:bart.gemert@gmail.com",
   secondaryLabel = "Bekijk het portfolio",
   secondaryHref = "#portfolio",
 }: CTASectionProps) {

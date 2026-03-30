@@ -62,9 +62,9 @@ export default function ServicesSection() {
           </p>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="flex flex-wrap justify-center gap-5">
           {services.map((service, i) => (
-            <AnimateIn key={service.title} delay={i * 0.07}>
+            <AnimateIn key={service.title} delay={i * 0.07} className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]">
               <div
                 className={`p-7 bg-white rounded-2xl border border-zinc-100 shadow-card hover:shadow-card-hover transition-all duration-300 ${service.border} hover:-translate-y-0.5`}
               >
