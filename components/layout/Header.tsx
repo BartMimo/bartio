@@ -1,0 +1,175 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const navLinks = [
+  { href: "#home", label: "Home", id: "home" },
+  { href: "#diensten", label: "Diensten", id: "diensten" },
+  { href: "#portfolio", label: "Portfolio", id: "portfolio" },
+  { href: "#over", label: "Over", id: "over" },
+  { href: "#contact", label: "Contact", id: "contact" },
+];
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+
+      const sections = navLinks
+        .map((l) => ({ id: l.id, el: document.getElementById(l.id) }))
+        .filter((s) => s.el != null);
+
+      const scrollY = window.scrollY + 100;
+      let current = sections[0]?.id ?? "home";
+      for (const s of sections) {
+        if (s.el!.offsetTop <= scrollY) {
+          current = s.id;
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  const handleNavClick = (id: string) => {
+    setIsOpen(false);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <>
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          scrolled
+            ? "bg-white/90 backdrop-blur-md border-b border-zinc-100 shadow-soft"
+            : "bg-transparent"
+        )}
+      >
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <a
+            href="#home"
+            onClick={(e) => { e.preventDefault(); handleNavClick("home"); }}
+            className="flex items-center gap-2.5 group flex-shrink-0"
+          >
+            <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
+              <span className="text-white font-bold text-sm font-display">B</span>
+            </div>
+            <span className="font-display font-bold text-zinc-900 text-lg tracking-tight">
+              Bartio
+            </span>
+          </a>
+
+          <nav className="hidden md:flex items-center gap-0.5">
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.href}
+                onClick={(e) => { e.preventDefault(); handleNavClick(link.id); }}
+                className={cn(
+                  "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer",
+                  activeSection === link.id
+                    ? "text-brand-600 bg-brand-50"
+                    : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50"
+                )}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="hidden md:flex">
+            <a
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); handleNavClick("contact"); }}
+              className="px-5 py-2.5 bg-zinc-900 text-white text-sm font-medium rounded-full hover:bg-zinc-700 transition-colors cursor-pointer"
+            >
+              Project bespreken
+            </a>
+          </div>
+
+          <button
+            className="md:hidden p-2 text-zinc-500 hover:text-zinc-900 transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Menu sluiten" : "Menu openen"}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </header>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-sm pt-16"
+          >
+            <nav className="flex flex-col p-6 gap-1">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.id}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.04, duration: 0.25 }}
+                >
+                  <a
+                    href={link.href}
+                    onClick={(e) => { e.preventDefault(); handleNavClick(link.id); }}
+                    className={cn(
+                      "block px-4 py-3.5 text-lg font-medium rounded-xl transition-colors cursor-pointer",
+                      activeSection === link.id
+                        ? "text-brand-600 bg-brand-50"
+                        : "text-zinc-700 hover:text-zinc-900 hover:bg-zinc-50"
+                    )}
+                  >
+                    {link.label}
+                  </a>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, x: -16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navLinks.length * 0.04 + 0.05, duration: 0.25 }}
+                className="mt-4 pt-4 border-t border-zinc-100"
+              >
+                <a
+                  href="#contact"
+                  onClick={(e) => { e.preventDefault(); handleNavClick("contact"); }}
+                  className="block w-full text-center px-6 py-4 bg-zinc-900 text-white font-medium rounded-xl hover:bg-zinc-700 transition-colors text-base cursor-pointer"
+                >
+                  Project bespreken
+                </a>
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
