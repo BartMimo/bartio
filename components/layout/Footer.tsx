@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="sm:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-5 w-fit">
               <Image
-                src="/logobartio.png"
+                src="/logobartio2.png"
                 alt="Bartio"
                 width={48}
                 height={48}

@@ -70,7 +70,7 @@ export default function Header() {
             className="flex items-center gap-2.5 group flex-shrink-0"
           >
             <Image
-              src="/logobartio.png"
+              src="/logobartio2.png"
               alt="Bartio"
               width={48}
               height={48}

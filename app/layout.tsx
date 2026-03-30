@@ -52,8 +52,8 @@ export const metadata: Metadata = {
       "Bartio ontwerpt en bouwt websites, webshops en mobiele apps voor merken en ondernemers die kwaliteit en stijl vooropstellen.",
   },
   icons: {
-    icon: "/logobartio.png",
-    apple: "/logobartio.png",
+    icon: "/logobartio2.png",
+    apple: "/logobartio2.png",
   },
   robots: {
     index: true,
