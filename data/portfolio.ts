@@ -34,7 +34,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Julies Art",
     category: "Webshop",
     client: "Julies Art",
-    year: 2024,
+    year: 2026,
     shortDescription:
       "Een warme webshop voor gepersonaliseerde houten kindercadeaus, met een soepele bestelflow en een speelse, betrouwbare uitstraling.",
     fullDescription: `Julies Art maakt gepersonaliseerde houten cadeaus voor kinderen — op naam, met liefde gemaakt in Nederland. Ze zochten een webshop die hun warmte en kwaliteit uitstraalt én die bezoekers moeiteloos naar een bestelling leidt.
@@ -61,7 +61,7 @@ We bouwden een volledige e-commerce shop met productpagina's waar klanten direct
     title: "Kortio",
     category: "iOS App",
     client: "Kortio",
-    year: 2024,
+    year: 2026,
     shortDescription:
       "Een iOS & Android app om kortingscodes van honderden merken snel te vinden, bewaren en gebruiken — zonder account, zonder reclame.",
     fullDescription: `Kortio is de slimste manier om kortingscodes te vinden en te gebruiken. De app bundelt actuele codes van honderden merken en laat gebruikers ze in één tik kopiëren. Geen account nodig, geen advertenties — gewoon direct besparen.
@@ -88,7 +88,7 @@ We bouwden zowel de iOS- als Android-app, samen met een bijbehorende marketingwe
     title: "Huis-aan-huis Direct",
     category: "Website",
     client: "Huis-aan-huis Direct",
-    year: 2025,
+    year: 2026,
     shortDescription:
       "Een heldere marketingsite voor een lokaal advertentieplatform dat flyers bezorgt bij huishoudens in meer dan 10 gemeentes.",
     fullDescription: `Huis-aan-huis Direct biedt bedrijven de mogelijkheid om lokaal te adverteren via fysieke flyers — bezorgd bij alle huishoudens die reclame ontvangen, voor slechts €0,03 per huishouden. Ze zochten een website die dit concept snel en overtuigend uitlegt aan potentiële adverteerders.
