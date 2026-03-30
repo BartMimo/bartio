@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { PortfolioItem } from "@/data/portfolio";
 
@@ -16,7 +17,15 @@ export default function PortfolioCard({ item }: PortfolioCardProps) {
       <div
         className={`w-full h-56 bg-gradient-to-br ${item.gradient} relative overflow-hidden flex items-end p-5`}
       >
-        <span className="absolute top-4 left-4 inline-flex items-center px-2.5 py-1 rounded-full bg-white/85 backdrop-blur-sm text-xs font-semibold text-zinc-700 shadow-sm">
+        {item.image && (
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          />
+        )}
+        <span className="absolute top-4 left-4 inline-flex items-center px-2.5 py-1 rounded-full bg-white/85 backdrop-blur-sm text-xs font-semibold text-zinc-700 shadow-sm z-10">
           {item.category}
         </span>
         <div
@@ -25,7 +34,7 @@ export default function PortfolioCard({ item }: PortfolioCardProps) {
             background: `linear-gradient(135deg, ${item.accentColor}20, transparent)`,
           }}
         />
-        <span className="relative text-xs font-medium text-zinc-600/60">{item.year}</span>
+        <span className="relative z-10 text-xs font-medium text-zinc-600/60">{item.year}</span>
       </div>
 
       {/* Content */}

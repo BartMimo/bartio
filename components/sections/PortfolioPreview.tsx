@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import AnimateIn from "@/components/ui/AnimateIn";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -41,10 +42,18 @@ export default function PortfolioPreview() {
                 <div
                   className={`w-full h-52 bg-gradient-to-br ${item.gradient} flex items-end p-5 relative overflow-hidden`}
                 >
-                  <span className="absolute top-4 left-4 inline-flex items-center px-2.5 py-1 rounded-full bg-white/80 backdrop-blur-sm text-xs font-semibold text-zinc-700">
+                  {item.image && (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                  )}
+                  <span className="absolute top-4 left-4 inline-flex items-center px-2.5 py-1 rounded-full bg-white/80 backdrop-blur-sm text-xs font-semibold text-zinc-700 z-10">
                     {item.category}
                   </span>
-                  <span className="text-xs font-medium text-zinc-600/70">{item.year}</span>
+                  <span className="relative z-10 text-xs font-medium text-zinc-600/70">{item.year}</span>
                 </div>
 
                 {/* Card content */}

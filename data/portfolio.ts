@@ -19,6 +19,7 @@ export interface PortfolioItem {
   result?: string;
   techStack: string[];
   externalLink?: string;
+  image?: string;
   gradient: string;
   gradientDark: string;
   accentColor: string;
@@ -150,6 +151,7 @@ We bouwden een volledige e-commerce shop met productpagina's waar klanten direct
       "Julies Art zag direct na de lancering een significante stijging in conversie vergeleken met hun vorige platform.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Vercel"],
     externalLink: "https://juliesart.nl",
+    image: "/portfolio/julies-art.png",
     gradient: "from-amber-200 via-orange-100 to-yellow-50",
     gradientDark: "from-amber-800 via-orange-700 to-yellow-900",
     accentColor: "#92400E",
@@ -176,6 +178,7 @@ We bouwden zowel de iOS- als Android-app, samen met een bijbehorende marketingwe
       "Kortio staat in de App Store en Google Play, met een groeiende gebruikersbasis en positieve reviews over de eenvoud van de app.",
     techStack: ["Swift", "SwiftUI", "Kotlin", "Jetpack Compose", "Next.js", "Tailwind CSS"],
     externalLink: "https://kortio.app",
+    image: "/portfolio/kortio.png",
     gradient: "from-blue-200 via-indigo-100 to-violet-50",
     gradientDark: "from-blue-800 via-indigo-700 to-violet-900",
     accentColor: "#4F46E5",
@@ -202,6 +205,7 @@ We bouwden een strakke, conversiegerichte marketingsite met een duidelijke propo
       "De site converteert goed met een lage bounce rate dankzij de duidelijke structuur en sterke call-to-action.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     externalLink: "https://huisaanhuisdirect.nl",
+    image: "/portfolio/huisaanhuisdirect.png",
     gradient: "from-blue-200 via-sky-100 to-cyan-50",
     gradientDark: "from-blue-800 via-sky-700 to-cyan-900",
     accentColor: "#2563EB",
