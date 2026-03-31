@@ -187,7 +187,7 @@ export default function DienstenPage() {
 
                   <div className="mt-8">
                     <Link
-                      href="/contact"
+                      href="/#contact"
                       className="group inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 text-white rounded-full text-sm font-medium hover:bg-zinc-700 transition-colors"
                     >
                       Project bespreken
@@ -248,7 +248,7 @@ export default function DienstenPage() {
         title="Welke stap wil jij zetten?"
         description="Neem contact op voor een vrijblijvend gesprek. We bespreken je idee en kijken samen wat de beste aanpak is."
         primaryLabel="Vrijblijvend gesprek"
-        primaryHref="/contact"
+        primaryHref="/#contact"
         secondaryLabel="Bekijk het portfolio"
         secondaryHref="/portfolio"
       />

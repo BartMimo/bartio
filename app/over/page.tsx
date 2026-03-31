@@ -150,7 +150,7 @@ export default function OverPage() {
         title="Werken we samen?"
         description="Of je nu een helder plan hebt of een vaag idee — we denken graag mee. Neem vrijblijvend contact op."
         primaryLabel="Vertel ons over je project"
-        primaryHref="/contact"
+        primaryHref="/#contact"
         secondaryLabel="Bekijk ons werk"
         secondaryHref="/portfolio"
       />

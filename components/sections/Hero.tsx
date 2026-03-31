@@ -94,7 +94,7 @@ export default function Hero() {
               backgroundClip: "text",
             }}
           >
-            die je trots op bent.
+            waar je trots op bent.
           </span>
         </motion.h1>
 

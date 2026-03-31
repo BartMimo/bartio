@@ -189,7 +189,7 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
                   Vertel ons over jouw idee. We denken graag mee.
                 </p>
                 <Link
-                  href="/contact"
+                  href="/#contact"
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors"
                 >
                   Neem contact op →
@@ -204,7 +204,7 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
         title="Jouw project is het volgende."
         description="Bartio bouwt digitale producten die indruk maken. Laat ons horen wat jij wilt bereiken."
         primaryLabel="Gesprek inplannen"
-        primaryHref="/contact"
+        primaryHref="/#contact"
         secondaryLabel="Meer projecten"
         secondaryHref="/portfolio"
       />

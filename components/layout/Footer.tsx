@@ -12,7 +12,7 @@ const footerLinks = {
   studio: [
     { href: "/over", label: "Over Bartio" },
     { href: "/portfolio", label: "Portfolio" },
-    { href: "/contact", label: "Contact" },
+    { href: "/#contact", label: "Contact" },
   ],
 };
 
@@ -39,10 +39,10 @@ export default function Footer() {
             </p>
             <div className="mt-5 space-y-1">
               <a
-                href="mailto:hallo@bartio.nl"
+                href="mailto:bart.gemert@gmail.com"
                 className="block text-sm text-brand-400 hover:text-brand-300 transition-colors"
               >
-                hallo@bartio.nl
+                bart.gemert@gmail.com
               </a>
             </div>
           </div>
