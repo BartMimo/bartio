@@ -6,7 +6,16 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "Over Bartio",
   description:
-    "Bartio is een digitale studio die websites, webshops en mobiele apps bouwt voor merken die kwaliteit serieus nemen.",
+    "Bartio is een digitale studio in Nederland die websites, webshops en mobiele apps bouwt voor merken en ondernemers die kwaliteit serieus nemen.",
+  alternates: {
+    canonical: "https://www.bartio.nl/over",
+  },
+  openGraph: {
+    title: "Over Bartio | Digitale studio Nederland",
+    description:
+      "Bartio is een digitale studio in Nederland die websites, webshops en mobiele apps bouwt voor merken en ondernemers die kwaliteit serieus nemen.",
+    url: "https://www.bartio.nl/over",
+  },
 };
 
 const values = [

@@ -16,7 +16,26 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "Diensten",
   description:
-    "Bartio bouwt websites, webshops, iOS apps, Apple Watch apps en Android apps. Ontdek wat we voor jou kunnen doen.",
+    "Bartio bouwt websites, webshops, iOS apps, Apple Watch apps en Android apps voor ondernemers in Nederland. Ontdek wat we voor jou kunnen doen.",
+  keywords: [
+    "website laten bouwen Nederland",
+    "webshop laten bouwen",
+    "iOS app laten bouwen",
+    "Android app laten bouwen",
+    "Apple Watch app",
+    "Next.js bureau",
+    "SwiftUI developer",
+    "Kotlin Jetpack Compose",
+  ],
+  alternates: {
+    canonical: "https://www.bartio.nl/diensten",
+  },
+  openGraph: {
+    title: "Diensten | Bartio",
+    description:
+      "Bartio bouwt websites, webshops, iOS apps, Apple Watch apps en Android apps voor ondernemers in Nederland.",
+    url: "https://www.bartio.nl/diensten",
+  },
 };
 
 const services = [

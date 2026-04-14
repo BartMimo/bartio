@@ -1,0 +1,51 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import AnimateIn from "@/components/ui/AnimateIn";
+import ProjectModal from "@/components/portfolio/ProjectModal";
+import { portfolioItems, PortfolioItem } from "@/data/portfolio";
+
+export default function PortfolioGrid() {
+  const [selected, setSelected] = useState<PortfolioItem | null>(null);
+
+  return (
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {portfolioItems.map((item, i) => (
+          <AnimateIn key={item.id} delay={i * 0.1}>
+            <div
+              className="bg-white rounded-2xl border border-zinc-100 shadow-card overflow-hidden flex flex-col cursor-pointer hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300"
+              onClick={() => setSelected(item)}
+            >
+              <div className={`w-full h-56 bg-gradient-to-br ${item.gradient} relative overflow-hidden`}>
+                {item.image && (
+                  <Image src={item.image} alt={item.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                )}
+                <span className="absolute top-4 left-4 inline-flex items-center px-2.5 py-1 rounded-full bg-white/85 backdrop-blur-sm text-xs font-semibold text-zinc-700 shadow-sm z-10">
+                  {item.category}
+                </span>
+                <span className="absolute bottom-4 left-4 text-xs font-medium text-zinc-600/70 z-10">{item.year}</span>
+              </div>
+
+              <div className="p-6 flex flex-col flex-1">
+                <h2 className="font-display font-semibold text-zinc-900 text-xl mb-2">{item.title}</h2>
+                <p className="text-sm text-zinc-500 leading-relaxed line-clamp-2 mb-4">{item.shortDescription}</p>
+                <div className="flex flex-wrap gap-1.5 mt-auto mb-4">
+                  {item.techStack.slice(0, 3).map((tech) => (
+                    <span key={tech} className="inline-flex items-center px-2 py-0.5 rounded-md bg-zinc-50 text-zinc-500 text-xs font-medium border border-zinc-100">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-xs font-semibold text-brand-600">Meer lezen →</span>
+              </div>
+            </div>
+          </AnimateIn>
+        ))}
+      </div>
+
+      {selected && <ProjectModal item={selected} onClose={() => setSelected(null)} />}
+    </>
+  );
+}

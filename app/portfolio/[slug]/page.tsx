@@ -20,6 +20,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: item.title,
     description: item.shortDescription,
+    alternates: {
+      canonical: `https://www.bartio.nl/portfolio/${item.slug}`,
+    },
+    openGraph: {
+      title: `${item.title} | Bartio`,
+      description: item.shortDescription,
+      url: `https://www.bartio.nl/portfolio/${item.slug}`,
+      type: "article",
+    },
   };
 }
 
