@@ -14,6 +14,16 @@ const nextConfig: NextConfig = {
         source: "/voorbeeldkamphorst/:path*",
         destination: "https://kamphorst-hovenier.vercel.app/voorbeeldkamphorst/:path*",
       },
+      {
+        source: "/voorbeeldtomshoveniersprojecten",
+        destination:
+          "https://toms-hoveniersprojecten.vercel.app/voorbeeldtomshoveniersprojecten",
+      },
+      {
+        source: "/voorbeeldtomshoveniersprojecten/:path*",
+        destination:
+          "https://toms-hoveniersprojecten.vercel.app/voorbeeldtomshoveniersprojecten/:path*",
+      },
     ];
   },
 };
